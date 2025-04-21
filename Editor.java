@@ -84,13 +84,10 @@ class Editor extends JPanel {
         Graphics2D g2d = (Graphics2D) g;
         g2d.setRenderingHint(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_ON);
 
-        // Set background color
         setBackground(Color.GREEN.darker());
 
-        // Draw race track
         raceTrack.draw(g2d);
 
-        // Draw control points
         g2d.setColor(Color.RED);
         for (BezierCurve curve : raceTrack.getCurves()) {
             for (Point2D point : curve.getControlPoints()) {
@@ -98,13 +95,12 @@ class Editor extends JPanel {
             }
         }
 
-        // Draw current control points
         g2d.setColor(Color.GREEN);
         for (Point2D point : controlPoints) {
             g2d.fillOval((int) point.getX() - CONTROL_POINT_RADIUS / 2, (int) point.getY() - CONTROL_POINT_RADIUS / 2, CONTROL_POINT_RADIUS, CONTROL_POINT_RADIUS);
         }
 
-        // Draw helper lines
+        //helper lines
         if (controlPoints.size() > 1) {
             g2d.setColor(Color.LIGHT_GRAY.darker());
             for (int i = 0; i < controlPoints.size() - 1; i++) {
