@@ -17,7 +17,7 @@ class Editor extends JPanel {
     private static final int SELECTION_RADIUS = 10;
 
     public Editor() {
-        raceTrack = new RaceTrack(Color.BLACK, 10);
+        raceTrack = new RaceTrack(Color.BLACK, 25);
         controlPoints = new ArrayList<>();
         lastControlPoint = null;
         draggedPoint = null;
